@@ -1,0 +1,228 @@
+{
+  "eval_set_id": "customer_support_routing",
+  "name": "Customer Support Routing Evaluation",
+  "description": "Tests the concierge agent's ability to correctly route customer queries to the right specialist and handle greetings. Covers routing logic for all three specialist paths plus the HITL high-value refund scenario.",
+  "eval_cases": [
+    {
+      "eval_id": "routing_greeting",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "Hello!"}]
+          },
+          "final_response": {
+            "role": "model",
+            "parts": [{"text": "Welcome to our customer support! I'm your concierge today. How can I help you?"}]
+          },
+          "intermediate_data": {
+            "tool_uses": []
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_logistician_order_status",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I want to check on my order ORD-001. Can you tell me the status?"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "logistician"}},
+              {"name": "get_order_status", "args": {"order_id": "ORD-001"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_logistician_tracking",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "My tracking number is TRK-005. When will my package arrive?"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "logistician"}},
+              {"name": "get_shipment_tracking", "args": {"tracking_number": "TRK-005"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_stylist_search",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "Show me some casual jackets under $200"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "stylist"}},
+              {"name": "search_products", "args": {"query": "jacket", "max_price": 200}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_stylist_recommendations",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I need a recommendation for a vacation outfit"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "stylist"}},
+              {"name": "get_recommendations", "args": {"occasion": "vacation"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_resolver_return",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I want to return order ORD-005 and get a refund"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "resolver"}},
+              {"name": "process_return", "args": {"order_id": "ORD-005", "items": ["PROD-005"], "reason": "Not as described"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_resolver_low_value_refund",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I need a $50 refund for order ORD-003 — the product was defective"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "resolver"}},
+              {"name": "issue_refund", "args": {"order_id": "ORD-003", "amount": 50, "reason": "Defective product"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_resolver_high_value_hitl",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I want a refund for $150 on order ORD-002 — it's damaged"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "resolver"}},
+              {"name": "issue_refund", "args": {"order_id": "ORD-002", "amount": 150, "reason": "Damaged"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_resolver_human_escalation",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "I need to speak to a human about a $250 dispute on order ORD-010"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "resolver"}},
+              {"name": "escalate_to_human", "args": {"order_id": "ORD-010", "reason": "Customer dispute", "refund_amount": 250}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    },
+    {
+      "eval_id": "routing_logistician_list_orders",
+      "conversation": [
+        {
+          "invocation_id": "inv_1",
+          "user_content": {
+            "parts": [{"text": "Show me all orders for customer CUST-002"}]
+          },
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "transfer_to_agent", "args": {"agent_name": "logistician"}},
+              {"name": "list_orders", "args": {"customer_id": "CUST-002"}}
+            ]
+          }
+        }
+      ],
+      "session_input": {
+        "app_name": "customer_support",
+        "user_id": "eval_user",
+        "state": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+[
+  {
+    "id": "ORD-001",
+    "customer_id": "CUST-001",
+    "customer_name": "Alice Johnson",
+    "order_date": "2026-04-20",
+    "status": "delivered",
+    "items": [
+      {"product_id": "PROD-001", "name": "Classic Denim Jacket", "quantity": 1, "price": 89.99},
+      {"product_id": "PROD-002", "name": "Cotton Crew Neck T-Shirt", "quantity": 2, "price": 24.99}
+    ],
+    "total": 139.97,
+    "shipping_address": "123 Main St, New York, NY 10001",
+    "tracking_number": "TRK-001",
+    "shipping_provider": "FedEx",
+    "delivery_date": "2026-04-23"
+  },
+  {
+    "id": "ORD-002",
+    "customer_id": "CUST-002",
+    "customer_name": "Bob Smith",
+    "order_date": "2026-04-22",
+    "status": "shipped",
+    "items": [
+      {"product_id": "PROD-003", "name": "Running Sneakers", "quantity": 1, "price": 129.99}
+    ],
+    "total": 129.99,
+    "shipping_address": "456 Oak Ave, Los Angeles, CA 90001",
+    "tracking_number": "TRK-002",
+    "shipping_provider": "UPS",
+    "estimated_delivery": "2026-04-26"
+  },
+  {
+    "id": "ORD-003",
+    "customer_id": "CUST-001",
+    "customer_name": "Alice Johnson",
+    "order_date": "2026-04-23",
+    "status": "processing",
+    "items": [
+      {"product_id": "PROD-004", "name": "Leather Crossbody Bag", "quantity": 1, "price": 199.99}
+    ],
+    "total": 199.99,
+    "shipping_address": "123 Main St, New York, NY 10001"
+  },
+  {
+    "id": "ORD-004",
+    "customer_id": "CUST-003",
+    "customer_name": "Carol Davis",
+    "order_date": "2026-04-18",
+    "status": "delivered",
+    "items": [
+      {"product_id": "PROD-005", "name": "Summer Floral Dress", "quantity": 1, "price": 79.99},
+      {"product_id": "PROD-006", "name": "Strappy Heeled Sandals", "quantity": 1, "price": 59.99}
+    ],
+    "total": 139.98,
+    "shipping_address": "789 Elm St, Chicago, IL 60601",
+    "tracking_number": "TRK-003",
+    "shipping_provider": "USPS",
+    "delivery_date": "2026-04-21"
+  },
+  {
+    "id": "ORD-005",
+    "customer_id": "CUST-004",
+    "customer_name": "David Lee",
+    "order_date": "2026-04-21",
+    "status": "returned",
+    "items": [
+      {"product_id": "PROD-007", "name": "Wool Blend Blazer", "quantity": 1, "price": 179.99}
+    ],
+    "total": 179.99,
+    "shipping_address": "321 Pine Rd, Seattle, WA 98101",
+    "tracking_number": "TRK-004",
+    "shipping_provider": "FedEx",
+    "return_date": "2026-04-24",
+    "return_reason": "Wrong size"
+  },
+  {
+    "id": "ORD-006",
+    "customer_id": "CUST-005",
+    "customer_name": "Emma Wilson",
+    "order_date": "2026-04-24",
+    "status": "pending_human_approval",
+    "items": [
+      {"product_id": "PROD-008", "name": "Designer Watch", "quantity": 1, "price": 349.99}
+    ],
+    "total": 349.99,
+    "shipping_address": "654 Maple Dr, Boston, MA 02101",
+    "tracking_number": "TRK-005",
+    "shipping_provider": "FedEx"
+  },
+  {
+    "id": "ORD-007",
+    "customer_id": "CUST-002",
+    "customer_name": "Bob Smith",
+    "order_date": "2026-04-19",
+    "status": "delivered",
+    "items": [
+      {"product_id": "PROD-009", "name": "Slim Fit Chinos", "quantity": 2, "price": 49.99}
+    ],
+    "total": 99.98,
+    "shipping_address": "456 Oak Ave, Los Angeles, CA 90001",
+    "tracking_number": "TRK-006",
+    "shipping_provider": "UPS",
+    "delivery_date": "2026-04-22"
+  },
+  {
+    "id": "ORD-008",
+    "customer_id": "CUST-006",
+    "customer_name": "Frank Martinez",
+    "order_date": "2026-04-23",
+    "status": "shipped",
+    "items": [
+      {"product_id": "PROD-010", "name": "Athletic Joggers", "quantity": 1, "price": 54.99},
+      {"product_id": "PROD-011", "name": "Compression Sports Bra", "quantity": 1, "price": 34.99}
+    ],
+    "total": 89.98,
+    "shipping_address": "987 Cedar Ln, Miami, FL 33101",
+    "tracking_number": "TRK-007",
+    "shipping_provider": "DHL",
+    "estimated_delivery": "2026-04-27"
+  },
+  {
+    "id": "ORD-009",
+    "customer_id": "CUST-007",
+    "customer_name": "Grace Chen",
+    "order_date": "2026-04-20",
+    "status": "cancelled",
+    "items": [
+      {"product_id": "PROD-012", "name": "Cashmere Sweater", "quantity": 1, "price": 249.99}
+    ],
+    "total": 249.99,
+    "shipping_address": "147 Birch St, San Francisco, CA 94101",
+    "cancellation_date": "2026-04-21",
+    "cancellation_reason": "Customer requested cancellation"
+  },
+  {
+    "id": "ORD-010",
+    "customer_id": "CUST-008",
+    "customer_name": "Henry Thompson",
+    "order_date": "2026-04-24",
+    "status": "processing",
+    "items": [
+      {"product_id": "PROD-013", "name": "Canvas Sneakers", "quantity": 1, "price": 69.99}
+    ],
+    "total": 69.99,
+    "shipping_address": "258 Spruce Ave, Denver, CO 80201"
+  },
+  {
+    "id": "ORD-011",
+    "customer_id": "CUST-009",
+    "customer_name": "Ivy Rodriguez",
+    "order_date": "2026-04-22",
+    "status": "shipped",
+    "items": [
+      {"product_id": "PROD-014", "name": "Ankle Boots", "quantity": 1, "price": 119.99}
+    ],
+    "total": 119.99,
+    "shipping_address": "369 Willow Dr, Portland, OR 97201",
+    "tracking_number": "TRK-008",
+    "shipping_provider": "FedEx",
+    "estimated_delivery": "2026-04-25"
+  },
+  {
+    "id": "ORD-012",
+    "customer_id": "CUST-010",
+    "customer_name": "Jack Wilson",
+    "order_date": "2026-04-21",
+    "status": "delivered",
+    "items": [
+      {"product_id": "PROD-015", "name": "Linen Button-Down Shirt", "quantity": 3, "price": 39.99}
+    ],
+    "total": 119.97,
+    "shipping_address": "741 Redwood Blvd, Austin, TX 78701",
+    "tracking_number": "TRK-009",
+    "shipping_provider": "UPS",
+    "delivery_date": "2026-04-24"
+  },
+  {
+    "id": "ORD-013",
+    "customer_id": "CUST-003",
+    "customer_name": "Carol Davis",
+    "order_date": "2026-04-24",
+    "status": "processing",
+    "items": [
+      {"product_id": "PROD-016", "name": "Vintage Sunglasses", "quantity": 1, "price": 89.99}
+    ],
+    "total": 89.99,
+    "shipping_address": "789 Elm St, Chicago, IL 60601"
+  },
+  {
+    "id": "ORD-014",
+    "customer_id": "CUST-001",
+    "customer_name": "Alice Johnson",
+    "order_date": "2026-04-19",
+    "status": "delivered",
+    "items": [
+      {"product_id": "PROD-017", "name": "Silk Scarf", "quantity": 2, "price": 44.99}
+    ],
+    "total": 89.98,
+    "shipping_address": "123 Main St, New York, NY 10001",
+    "tracking_number": "TRK-010",
+    "shipping_provider": "USPS",
+    "delivery_date": "2026-04-22"
+  },
+  {
+    "id": "ORD-015",
+    "customer_id": "CUST-004",
+    "customer_name": "David Lee",
+    "order_date": "2026-04-23",
+    "status": "shipped",
+    "items": [
+      {"product_id": "PROD-018", "name": "Leather Belt", "quantity": 1, "price": 54.99},
+      {"product_id": "PROD-019", "name": "Leather Wallets", "quantity": 1, "price": 79.99}
+    ],
+    "total": 134.98,
+    "shipping_address": "321 Pine Rd, Seattle, WA 98101",
+    "tracking_number": "TRK-011",
+    "shipping_provider": "FedEx",
+    "estimated_delivery": "2026-04-26"
+  }
+]
